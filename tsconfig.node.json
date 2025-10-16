@@ -1,0 +1,64 @@
+{
+    "compilerOptions": {
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+        "target": "ES2022",
+        "lib": [
+            "ES2023"
+        ],
+        "module": "ESNext",
+        "skipLibCheck": true,
+        /* Bundler mode */
+        "moduleResolution": "Bundler",
+        "allowImportingTsExtensions": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "noEmit": true,
+        /* Linting */
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedSideEffectImports": true,
+        "jsx": "preserve",
+        "baseUrl": ".",
+        "paths": {
+            "src/*": [
+                "./src/*"
+            ],
+            "components/*": [
+                "./src/components/*"
+            ],
+            "utils/*": [
+                "./src/utils/*"
+            ],
+            "tests/*": [
+                "./tests/*"
+            ],
+            "-/components/*": [
+                "../bspk-ui/src/components/*"
+            ],
+            "-/hooks/*": [
+                "../bspk-ui/src/hooks/*"
+            ],
+            "-/utils/*": [
+                "../bspk-ui/src/utils/*"
+            ],
+            "-/types/*": [
+                "../bspk-ui/src/types/*"
+            ],
+            "-/constants/*": [
+                "../bspk-ui/src/constants/*"
+            ],
+            "-/styles/*": [
+                "../bspk-ui/src/styles/*"
+            ],
+        }
+    },
+    "include": [
+        "vite.config.ts",
+        "src/declaration.d.ts",
+        "playwright.config.ts",
+        ".scripts/**/*.ts",
+        ".scripts/*.ts",
+    ],
+}
