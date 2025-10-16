@@ -23,8 +23,8 @@ jobs:
 
             - name: Get UI Dev
               env:
-                  NODE_AUTH_TOKEN: ${{ secrets.DEV_GIT_TOKEN }} # Or a specific PAT
-              run: npm install https://${NODE_AUTH_TOKEN}@github.com/Anywhererealestate/bspk-ui#${branch}
+                  DEV_GIT_TOKEN: ${{ secrets.DEV_GIT_TOKEN }}
+              run: npm install https://${DEV_GIT_TOKEN}@github.com/Anywhererealestate/bspk-ui#dev
 
             - name: Build project
               run: npm run build
