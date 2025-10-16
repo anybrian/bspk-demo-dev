@@ -29,7 +29,7 @@ jobs:
               run: npm install "https://${DEV_GIT_TOKEN}@github.com/Anywhererealestate/bspk-ui#dev" && npm explore @bspk/ui -- npm run build
 
             - name: Build project
-              run: npm run build
+              run: MODE=production npm run build
 
             - name: Upload dev-ready build files
               uses: actions/upload-artifact@v4
