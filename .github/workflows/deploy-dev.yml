@@ -21,10 +21,13 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Build project
+            - name: Get UI Dev
               env:
-                  DEV_GIT_TOKEN: ${{ secrets.DEV_GIT_TOKEN }}
-              run: MODE=development DEV_GIT_TOKEN=${{ secrets.DEV_GIT_TOKEN }} npm run build
+                  NODE_AUTH_TOKEN: ${{ secrets.DEV_GIT_TOKEN }} # Or a specific PAT
+              run: npm install https://github.com/Anywhererealestate/bspk-ui.git#dev
+
+            - name: Build project
+              run: npm run build
 
             - name: Upload dev-ready build files
               uses: actions/upload-artifact@v4
