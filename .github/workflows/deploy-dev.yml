@@ -24,7 +24,7 @@ jobs:
             - name: Get UI Dev
               env:
                   DEV_GIT_TOKEN: ${{ secrets.DEV_GIT_TOKEN }}
-              run: echo ${DEV_GIT_TOKEN:0:5} && npm install "https://${DEV_GIT_TOKEN}@github.com/Anywhererealestate/bspk-ui#dev"
+              run: echo ${DEV_GIT_TOKEN:-5} && npm install "https://${DEV_GIT_TOKEN}@github.com/Anywhererealestate/bspk-ui#dev"
 
             - name: Build project
               run: npm run build
