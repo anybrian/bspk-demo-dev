@@ -24,7 +24,7 @@ jobs:
             - name: Build project
               env:
                   DEV_GIT_TOKEN: ${{ secrets.DEV_GIT_TOKEN }}
-              run: MODE=dev DEV_GIT_TOKEN=${{ secrets.DEV_GIT_TOKEN }} npm run build
+              run: MODE=development DEV_GIT_TOKEN=${{ secrets.DEV_GIT_TOKEN }} npm run build
 
             - name: Upload dev-ready build files
               uses: actions/upload-artifact@v4
