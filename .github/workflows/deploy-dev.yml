@@ -22,6 +22,8 @@ jobs:
               run: npm ci
 
             - name: Build project
+              env:
+                  DEV_GIT_TOKEN: ${{ secrets.DEV_GIT_TOKEN }}
               run: MODE=dev DEV_GIT_TOKEN=${{ secrets.DEV_GIT_TOKEN }} npm run build
 
             - name: Upload dev-ready build files
